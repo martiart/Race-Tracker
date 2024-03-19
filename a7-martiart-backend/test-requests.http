@@ -1,0 +1,96 @@
+### CREATE five documents.
+POST http://localhost:3000/races HTTP/1.1
+content-type: application/json
+
+{
+    "race_name": "Peachtree Road Race",
+    "race_miles": 6.2,
+    "race_time": "48 minutes: 43 seconds",
+    "race_city_state": "Atlanta, GA",
+    "race_date": "7-4-2023"
+
+}
+
+
+### CREATE 2
+POST http://localhost:3000/races HTTP/1.1
+content-type: application/json
+
+{
+    "race_name": "St.Jude Rock N Roll Marathon",
+    "race_miles": 26.2,
+    "race_time": "4 hours: 15 minutes: 43 seconds",
+    "race_city_state": "Nashville, TN",
+    "race_date": "4-23-2023"
+
+}
+
+### CREATE 3
+POST http://localhost:3000/races HTTP/1.1
+content-type: application/json
+
+{
+     "race_name": "St.Jude Rock N Roll Marathon",
+    "race_miles": 26.2,
+    "race_time": "RACE HAS NOT BEEN RUN YET",
+    "race_city_state": "Nashville, TN",
+    "race_date": "4-27-2024"
+}
+
+### CREATE 4
+POST http://localhost:3000/races HTTP/1.1
+content-type: application/json
+
+{
+    "race_name": "Nashville St. Paddy's Half Marathon & 5k",
+    "race_miles": 13.1,
+    "race_time": "1 hour: 50 minutes: 48 seconds",
+    "race_city_state": "Nashville, TN",
+    "race_date": "4-23-2023"
+}
+
+### CREATE 5
+POST http://localhost:3000/races HTTP/1.1
+content-type: application/json
+
+{
+     "race_name": "Music City Juneteenth Freedom Day Run",
+    "race_miles": 3.1,
+    "race_time": "RACE HAS NOT BEEN RUN YET",
+    "race_city_state": "Nashville, TN",
+    "race_date": "06-19-2024"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/races HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/races/65e1462440d3ca487e64a166 HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the ID in the following request with one that exists
+### and update the year:
+PUT http://localhost:3000/races/65e146a540d3ca487e64a16e HTTP/1.1
+content-type: application/json
+
+{
+    "race_name": "Nashville St. Paddy's Half Marathon & 5k",
+    "race_miles": 13.1,
+    "race_time": "1 hour: 50 minutes: 48 seconds",
+    "race_city_state": "Outer Space, Universe",
+    "race_date": "01-01-1465"
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/races/65e1462440d3ca487e64a166 HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/races HTTP/1.1
+
